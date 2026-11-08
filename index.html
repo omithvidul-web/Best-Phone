@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Budget Phones in 2026 | BudgetPhoneBlog</title>
+<style>
+  :root {
+    --primary: #0f766e;
+    --primary-dark: #0d5c56;
+    --accent: #f59e0b;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header {
+    background: #0f172a;
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+  }
+  .logo span { color: var(--accent); }
+  nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+  nav a {
+    color: #cbd5e1;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  nav a:hover, nav a.active { color: white; }
+
+  .hero {
+    background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
+    color: white;
+    padding: 3.5rem 0 4rem;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin-bottom: 0.75rem;
+  }
+  .hero p {
+    font-size: 1.15rem;
+    opacity: 0.9;
+    max-width: 650px;
+    margin: 0 auto 1.5rem;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #1e293b;
+    padding: 0.7rem 1.6rem;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .btn:hover { background: #fbbf24; transform: translateY(-2px); text-decoration: none; }
+
+  .page { display: none; padding: 2.5rem 0 4rem; }
+  .page.active { display: block; }
+
+  .phone-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.75rem;
+    margin-top: 2rem;
+  }
+  .phone-card {
+    background: var(--card);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .phone-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+  }
+  .phone-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background: #f1f5f9;
+    padding: 1rem;
+  }
+  .phone-card .content { padding: 1.25rem; }
+  .phone-card h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+  .price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0.4rem 0;
+  }
+  .badge {
+    display: inline-block;
+    background: #ccfbf1;
+    color: #0f766e;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    margin-bottom: 0.5rem;
+  }
+  .specs {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin: 0.6rem 0 1rem;
+  }
+  .card-btn {
+    display: block;
+    text-align: center;
+    background: var(--primary);
+    color: white;
+    padding: 0.6rem;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+  .card-btn:hover { background: var(--primary-dark); text-decoration: none; }
+
+  .detail-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    margin-bottom: 2.5rem;
+  }
+  @media (max-width: 768px) {
+    .detail-hero { grid-template-columns: 1fr; }
+  }
+  .detail-hero img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: contain;
+    background: #f1f5f9;
+    border-radius: 16px;
+    padding: 1.5rem;
+  }
+  .detail-content h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .detail-content .price { font-size: 1.6rem; }
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } }
+  .pros, .cons {
+    background: var(--card);
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+  .pros h3 { color: #059669; }
+  .cons h3 { color: #dc2626; }
+  ul { padding-left: 1.2rem; }
+  li { margin: 0.35rem 0; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin: 1.5rem 0;
+  }
+  th, td {
+    padding: 0.9rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th { background: #0f172a; color: white; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  tr:hover { background: #f1f5f9; }
+
+  h2 { font-size: 1.7rem; margin: 2rem 0 1rem; }
+  .intro { color: var(--muted); max-width: 700px; margin-bottom: 1.5rem; }
+
+  footer {
+    background: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+  }
+  footer a { color: #cbd5e1; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo" onclick="showPage('home'); return false;">Budget<span>Phone</span>Blog</a>
+    <nav>
+      <ul>
+        <li><a href="#home" onclick="showPage('home'); return false;" id="nav-home">Home</a></li>
+        <li><a href="#phones" onclick="showPage('phones'); return false;" id="nav-phones">All Phones</a></li>
+        <li><a href="#compare" onclick="showPage('compare'); return false;" id="nav-compare">Compare</a></li>
+        <li><a href="#guide" onclick="showPage('guide'); return false;" id="nav-guide">Buying Guide</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HOME PAGE -->
+<section id="home" class="page active">
+  <div class="hero">
+    <div class="container">
+      <h1>Best Budget Phones in 2026</h1>
+      <p>Real reviews of the top smartphones under –. Long software support, great cameras, and excellent battery life without the flagship price.</p>
+      <a href="#phones" class="btn" onclick="showPage('phones'); return false;">See Top Picks →</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Our Top Picks for Late 2026</h2>
+    <p class="intro">After reviewing the latest models and considering price hikes caused by the ongoing memory shortage, these are the best value phones available right now.</p>
+
+    <div class="phone-grid">
+      <div class="phone-card">
+        <img src="https://cdn.mos.cms.futurecdn.net/fuSvasSRHLSkCmvszZZxyd-2000-80.jpg" alt="Google Pixel 10a">
+        <div class="content">
+          <span class="badge">Best Overall</span>
+          <h3>Google Pixel 10a</h3>
+          <div class="price">From </div>
+          <div class="specs">6.3" 120Hz OLED • Tensor G4 • 7 years of updates • Excellent camera</div>
+          <a href="#pixel10a" class="card-btn" onclick="showPage('pixel10a'); return false;">Full Review</a>
+        </div>
+      </div>
+
+      <div class="phone-card">
+        <img src="https://m-cdn.phonearena.com/images/phones/85872-940/Samsung-Galaxy-A37-5G.jpg?w=1" alt="Samsung Galaxy A37 5G">
+        <div class="content">
+          <span class="badge">Best Under </span>
+          <h3>Samsung Galaxy A37 5G</h3>
+          <div class="price">~ – </div>
+          <div class="specs">6.7" 120Hz AMOLED • IP68 • 6 years of updates • Strong all-rounder</div>
+          <a href="#galaxya37" class="card-btn" onclick="showPage('galaxya37'); return false;">Full Review</a>
+        </div>
+      </div>
+
+      <div class="phone-card">
+        <img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/03/nothing-phone-4a-pro-1.jpg?quality=90&strip=all&w=1200" alt="Nothing Phone (4a) Pro">
+        <div class="content">
+          <span class="badge">Best Design & Zoom</span>
+          <h3>Nothing Phone (4a) Pro</h3>
+          <div class="price"></div>
+          <div class="specs">6.83" 144Hz AMOLED • 3.5x telephoto • Glyph Matrix • Unique style</div>
+          <a href="#nothing4a" class="card-btn" onclick="showPage('nothing4a'); return false;">Full Review</a>
+        </div>
+      </div>
+
+      <div class="phone-card">
+        <img src="https://m-cdn.phonearena.com/images/phones/85655-940/Motorola-Moto-G-2026.jpg?w=1" alt="Motorola Moto G 2026">
+        <div class="content">
+          <span class="badge">Best Under </span>
+          <h3>Motorola Moto G (2026)</h3>
+          <div class="price">~ – </div>
+          <div class="specs">6.7" 120Hz LCD • 5200mAh battery • microSD • Clean Android</div>
+          <a href="#motog" class="card-btn" onclick="showPage('motog'); return false;">Full Review</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL PHONES PAGE -->
+<section id="phones" class="page">
+  <div class="container">
+    <h2>All Recommended Budget Phones 2026</h2>
+    <p class="intro">Here are the phones we currently recommend, sorted by value and use case.</p>
+    <div class="phone-grid">
+      <div class="phone-card">
+        <img src="https://cdn.mos.cms.futurecdn.net/fuSvasSRHLSkCmvszZZxyd-2000-80.jpg" alt="Pixel 10a">
+        <div class="content">
+          <span class="badge">Best Overall</span>
+          <h3>Google Pixel 10a</h3>
+          <div class="price">From </div>
+          <a href="#pixel10a" class="card-btn" onclick="showPage('pixel10a'); return false;">Review</a>
+        </div>
+      </div>
+      <div class="phone-card">
+        <img src="https://m-cdn.phonearena.com/images/phones/85872-940/Samsung-Galaxy-A37-5G.jpg?w=1" alt="Galaxy A37">
+        <div class="content">
+          <span class="badge">Best Value</span>
+          <h3>Samsung Galaxy A37 5G</h3>
+          <div class="price">~–</div>
+          <a href="#galaxya37" class="card-btn" onclick="showPage('galaxya37'); return false;">Review</a>
+        </div>
+      </div>
+      <div class="phone-card">
+        <img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/03/nothing-phone-4a-pro-1.jpg?quality=90&strip=all&w=1200" alt="Nothing 4a Pro">
+        <div class="content">
+          <span class="badge">Best Features</span>
+          <h3>Nothing Phone (4a) Pro</h3>
+          <div class="price"></div>
+          <a href="#nothing4a" class="card-btn" onclick="showPage('nothing4a'); return false;">Review</a>
+        </div>
+      </div>
+      <div class="phone-card">
+        <img src="https://m-cdn.phonearena.com/images/phones/85655-940/Motorola-Moto-G-2026.jpg?w=1" alt="Moto G 2026">
+        <div class="content">
+          <span class="badge">Best Budget</span>
+          <h3>Motorola Moto G (2026)</h3>
+          <div class="price">~–</div>
+          <a href="#motog" class="card-btn" onclick="showPage('motog'); return false;">Review</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PIXEL 10a DETAIL -->
+<section id="pixel10a" class="page">
+  <div class="container">
+    <div class="detail-hero">
+      <img src="https://cdn.mos.cms.futurecdn.net/fuSvasSRHLSkCmvszZZxyd-2000-80.jpg" alt="Google Pixel 10a">
+      <div class="detail-content">
+        <span class="badge">Editor’s Choice – Best Overall</span>
+        <h1>Google Pixel 10a</h1>
+        <div class="price">Starting at  (128GB)</div>
+        <p>The Pixel 10a remains the most complete budget-friendly phone in 2026. It delivers flagship-level camera processing, clean software, and an industry-leading 7 years of OS and security updates.</p>
+        <p><strong>Key Specs:</strong> 6.3-inch 120Hz Actua OLED, Google Tensor G4, 8GB RAM, 48MP + 13MP cameras, 5100mAh battery, IP68, wireless charging.</p>
+      </div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h3>✓ Pros</h3>
+        <ul>
+          <li>Best camera experience in the price range</li>
+          <li>7 years of software support</li>
+          <li>Clean, fast Android experience</li>
+          <li>Excellent AI features (Gemini, Call Screen, etc.)</li>
+          <li>Wireless charging + solid build</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h3>✗ Cons</h3>
+        <ul>
+          <li>Price has risen due to memory costs</li>
+          <li>No microSD expansion</li>
+          <li>Battery life is good but not class-leading</li>
+          <li>Incremental upgrade over Pixel 9a</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Who should buy it?</h2>
+    <p>Anyone who wants the best overall Android experience under . Ideal if you value camera quality, long-term updates, and a pure Google experience.</p>
+    <a href="#phones" class="btn" onclick="showPage('phones'); return false;" style="margin-top:1.5rem;">← Back to all phones</a>
+  </div>
+</section>
+
+<!-- GALAXY A37 DETAIL -->
+<section id="galaxya37" class="page">
+  <div class="container">
+    <div class="detail-hero">
+      <img src="https://m-cdn.phonearena.com/images/phones/85872-940/Samsung-Galaxy-A37-5G.jpg?w=1" alt="Samsung Galaxy A37 5G">
+      <div class="detail-content">
+        <span class="badge">Best Under </span>
+        <h1>Samsung Galaxy A37 5G</h1>
+        <div class="price">Typically  – </div>
+        <p>Samsung’s current sweet-spot mid-ranger. You get a large bright Super AMOLED screen, IP68 dust/water resistance, solid battery life, and six years of promised software support — rare at this price.</p>
+        <p><strong>Key Specs:</strong> 6.7-inch 120Hz Super AMOLED, Exynos 1480, 6/8GB RAM, 50MP main camera, 5000mAh + 45W charging, IP68.</p>
+      </div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h3>✓ Pros</h3>
+        <ul>
+          <li>Large, smooth AMOLED display</li>
+          <li>IP68 water & dust resistance</li>
+          <li>6 years of OS + security updates</li>
+          <li>Good battery + fast charging</li>
+          <li>Reliable Samsung ecosystem</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h3>✗ Cons</h3>
+        <ul>
+          <li>Camera is solid but not Pixel-level</li>
+          <li>Software has more bloat than Pixel</li>
+          <li>No wireless charging</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Who should buy it?</h2>
+    <p>Most people looking for a practical daily driver under . Especially good if you want durability and long software support without paying Pixel prices.</p>
+    <a href="#phones" class="btn" onclick="showPage('phones'); return false;" style="margin-top:1.5rem;">← Back to all phones</a>
+  </div>
+</section>
+
+<!-- NOTHING 4a PRO DETAIL -->
+<section id="nothing4a" class="page">
+  <div class="container">
+    <div class="detail-hero">
+      <img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/03/nothing-phone-4a-pro-1.jpg?quality=90&strip=all&w=1200" alt="Nothing Phone (4a) Pro">
+      <div class="detail-content">
+        <span class="badge">Best Design & Camera Zoom</span>
+        <h1>Nothing Phone (4a) Pro</h1>
+        <div class="price"></div>
+        <p>Nothing continues to stand out with its unique Glyph Matrix design and now adds a useful 3.5x periscope telephoto. The large 144Hz AMOLED is one of the best screens you can get under .</p>
+        <p><strong>Key Specs:</strong> 6.83-inch 144Hz AMOLED (up to 5000 nits), Snapdragon 7 Gen 4, 8/12GB RAM, 50MP main + 50MP 3.5x telephoto, 5080mAh + 50W charging.</p>
+      </div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h3>✓ Pros</h3>
+        <ul>
+          <li>Unique and premium-feeling design</li>
+          <li>Excellent bright high-refresh screen</li>
+          <li>Real optical 3.5x telephoto</li>
+          <li>Strong battery life</li>
+          <li>Fun Glyph Matrix notifications</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h3>✗ Cons</h3>
+        <ul>
+          <li>Only 3 years of OS updates</li>
+          <li>No wireless charging</li>
+          <li>Camera processing is mixed</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Who should buy it?</h2>
+    <p>People who care about design, want optical zoom, and enjoy something different from the usual Samsung/Google look.</p>
+    <a href="#phones" class="btn" onclick="showPage('phones'); return false;" style="margin-top:1.5rem;">← Back to all phones</a>
+  </div>
+</section>
+
+<!-- MOTO G DETAIL -->
+<section id="motog" class="page">
+  <div class="container">
+    <div class="detail-hero">
+      <img src="https://m-cdn.phonearena.com/images/phones/85655-940/Motorola-Moto-G-2026.jpg?w=1" alt="Motorola Moto G 2026">
+      <div class="detail-content">
+        <span class="badge">Best True Budget Option</span>
+        <h1>Motorola Moto G (2026)</h1>
+        <div class="price">Usually  – </div>
+        <p>When you need a reliable phone for under , the Moto G (2026) is hard to beat. Big battery, clean near-stock Android, microSD support, and a headphone jack still make it very practical.</p>
+        <p><strong>Key Specs:</strong> 6.7-inch 120Hz LCD, Dimensity 6300, 4GB RAM, 50MP camera, 5200mAh battery, microSD, 3.5mm jack.</p>
+      </div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h3>✓ Pros</h3>
+        <ul>
+          <li>Excellent battery life</li>
+          <li>Very clean Android experience</li>
+          <li>microSD + headphone jack</li>
+          <li>Affordable and widely available</li>
+          <li>Decent everyday performance</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h3>✗ Cons</h3>
+        <ul>
+          <li>Only 4GB RAM base model</li>
+          <li>LCD instead of OLED</li>
+          <li>Shorter software support</li>
+          <li>Camera is average</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Who should buy it?</h2>
+    <p>Students, secondary phones, or anyone who simply needs a dependable device without spending more than .</p>
+    <a href="#phones" class="btn" onclick="showPage('phones'); return false;" style="margin-top:1.5rem;">← Back to all phones</a>
+  </div>
+</section>
+
+<!-- COMPARE PAGE -->
+<section id="compare" class="page">
+  <div class="container">
+    <h2>Quick Comparison – Best Budget Phones 2026</h2>
+    <p class="intro">Side-by-side look at the key differences. Prices fluctuate — always check current deals.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Phone</th>
+          <th>Price (approx)</th>
+          <th>Display</th>
+          <th>Updates</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Google Pixel 10a</strong></td>
+          <td>+</td>
+          <td>6.3" 120Hz OLED</td>
+          <td>7 years</td>
+          <td>Camera + software</td>
+        </tr>
+        <tr>
+          <td><strong>Samsung Galaxy A37 5G</strong></td>
+          <td>–</td>
+          <td>6.7" 120Hz AMOLED</td>
+          <td>6 years</td>
+          <td>All-rounder / durability</td>
+        </tr>
+        <tr>
+          <td><strong>Nothing Phone (4a) Pro</strong></td>
+          <td></td>
+          <td>6.83" 144Hz AMOLED</td>
+          <td>3 years</td>
+          <td>Design + optical zoom</td>
+        </tr>
+        <tr>
+          <td><strong>Motorola Moto G (2026)</strong></td>
+          <td>–</td>
+          <td>6.7" 120Hz LCD</td>
+          <td>~2–3 years</td>
+          <td>Tight budget / battery</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 style="margin-top:2.5rem;">Recommendation Summary</h2>
+    <ul style="margin-top:1rem;">
+      <li><strong>Most people:</strong> Samsung Galaxy A37 5G or Google Pixel 10a</li>
+      <li><strong>Best camera & future-proofing:</strong> Pixel 10a</li>
+      <li><strong>Want something unique:</strong> Nothing Phone (4a) Pro</li>
+      <li><strong>Under :</strong> Motorola Moto G (2026)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- BUYING GUIDE -->
+<section id="guide" class="page">
+  <div class="container">
+    <h2>2026 Budget Phone Buying Guide</h2>
+    <p class="intro">The market has changed in 2026. A global memory chip shortage (driven by AI demand) has pushed prices up and reduced RAM/storage options on many budget models. Here’s what matters most right now.</p>
+
+    <h3 style="margin-top:1.8rem;">1. Software Support is Critical</h3>
+    <p>Look for at least 4–5 years of OS updates. Pixel leads with 7 years. Samsung A-series now offers 6 years on many models. Motorola and Nothing are shorter.</p>
+
+    <h3 style="margin-top:1.8rem;">2. Display Quality</h3>
+    <p>AMOLED/OLED with 120Hz is now common even under  and makes a huge difference in everyday use. Avoid older 60Hz LCDs if possible.</p>
+
+    <h3 style="margin-top:1.8rem;">3. Battery Life</h3>
+    <p>5000mAh+ is the new baseline. Real-world endurance matters more than peak charging speed for most users.</p>
+
+    <h3 style="margin-top:1.8rem;">4. Camera Reality Check</h3>
+    <p>Software processing still beats raw megapixels. Google’s computational photography remains the leader. Optical zoom (like Nothing’s 3.5x) is a genuine advantage.</p>
+
+    <h3 style="margin-top:1.8rem;">5. Current Price Reality</h3>
+    <p>Due to memory costs, many “” phones now start closer to –. Always compare current street prices rather than launch MSRP.</p>
+
+    <p style="margin-top:2rem;"><strong>Bottom line:</strong> In late 2026 the safest all-rounders are the <a href="#galaxya37" onclick="showPage('galaxya37'); return false;">Galaxy A37 5G</a> and <a href="#pixel10a" onclick="showPage('pixel10a'); return false;">Pixel 10a</a>. Stretch for the Pixel if camera and updates matter most; save a bit with the Galaxy if you want a larger screen and better durability.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 BudgetPhoneBlog — Independent reviews of the best affordable smartphones.</p>
+    <p style="margin-top:0.5rem; font-size:0.85rem;">Prices and availability change frequently. Always verify current offers before purchasing.</p>
+  </div>
+</footer>
+
+<script>
+  function showPage(pageId) {
+    try {
+      // Hide all pages
+      var pages = document.querySelectorAll('.page');
+      for (var i = 0; i < pages.length; i++) {
+        pages[i].classList.remove('active');
+      }
+
+      // Show requested page (fallback to home)
+      var page = document.getElementById(pageId);
+      if (!page) {
+        pageId = 'home';
+        page = document.getElementById('home');
+      }
+      if (page) {
+        page.classList.add('active');
+      }
+
+      // Update nav active state
+      var navLinks = document.querySelectorAll('nav a');
+      for (var j = 0; j < navLinks.length; j++) {
+        navLinks[j].classList.remove('active');
+      }
+      var activeNav = document.getElementById('nav-' + pageId);
+      if (activeNav) {
+        activeNav.classList.add('active');
+      }
+
+      // Scroll to top (safe version)
+      try {
+        window.scrollTo(0, 0);
+      } catch (e) {}
+
+      // Update hash only when needed (avoids history API problems on file://)
+      if (window.location.hash.slice(1) !== pageId) {
+        window.location.hash = pageId;
+      }
+    } catch (err) {
+      console.error('showPage error:', err);
+    }
+  }
+
+  // Initial page load
+  function init() {
+    var hash = window.location.hash ? window.location.hash.slice(1) : 'home';
+    showPage(hash || 'home');
+  }
+
+  // Run when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  // Handle browser back/forward
+  window.addEventListener('hashchange', function() {
+    var hash = window.location.hash ? window.location.hash.slice(1) : 'home';
+    showPage(hash || 'home');
+  });
+</script>
+</body>
+</html>
